@@ -21,7 +21,7 @@ phases:
       - cd terraform-code
       - terraform init
       - terraform plan
-      - terraform destroy
+      - terraform destroy -auto-approve
       
   build:
     commands:
