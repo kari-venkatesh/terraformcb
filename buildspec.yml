@@ -19,8 +19,6 @@ phases:
       - apt-cache search source
       - apt-get install -y curl jq
       - cd terraform-code
-      - terraform init
-      - terraform plan
       - terraform destroy -auto--approve
      
       
