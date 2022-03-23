@@ -17,7 +17,7 @@ phases:
       - apt-get update
       - apt-cache search source
       - apt-get install -y curl jq
-      - 
+      ## 
   build:
     commands:
       - echo "Post apply build"
