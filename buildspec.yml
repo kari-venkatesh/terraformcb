@@ -20,11 +20,11 @@ phases:
       - apt-get install -y curl jq
       - cd terraform-code
       - terraform init
+      - terraform plan -out=FILE
+      - terraform apply -auto-approve
       
-     
   build:
     commands:
-      - $destroy
       - echo "Post apply build"
   post_build:
     commands:
