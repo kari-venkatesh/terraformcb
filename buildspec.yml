@@ -8,7 +8,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - sudo import boto
+      - sudo import boto3
       - sudo apt update
       - sudo apt install python3-boto3
       - wget https://releases.hashicorp.com/terraform/0.10.4/terraform_0.10.4_linux_amd64.zip
