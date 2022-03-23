@@ -17,7 +17,9 @@ phases:
       - apt-get update
       - apt-cache search source
       - apt-get install -y curl jq
-      - find . -name *.tf
+      - cd terraform-code
+      - terraform init
+      - terraform apply
   build:
     commands:
       - echo "Post apply build"
