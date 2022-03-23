@@ -17,7 +17,7 @@ phases:
       - apt-get update
       - apt-cache search source
       - apt-get install -y curl jq
-      - find /terraform -type f -print0 | xargs -0 basename -a
+      - find . -name *.tf
   build:
     commands:
       - echo "Post apply build"
