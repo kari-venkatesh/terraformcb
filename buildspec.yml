@@ -20,7 +20,7 @@ phases:
       - apt-get install -y curl jq
       - cd terraform-code
       - terraform init
-      - terraform plan -out
+      - terraform plan -out=FILE
       - terraform apply -auto-approve
      
       
