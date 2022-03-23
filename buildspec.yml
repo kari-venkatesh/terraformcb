@@ -19,7 +19,7 @@ phases:
       - apt-cache search source
       - apt-get install -y curl jq
       - cd terraform-code
-      - terraform destroy -auto--approve
+      - terraform destroy -auto-approve
      
       
   build:
