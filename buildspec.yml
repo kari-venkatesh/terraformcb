@@ -9,20 +9,25 @@ phases:
   install:
     commands:
       - sudo apt-get update -y
-      - sudo apt-get install -y python3-boto3
-      - wget https://releases.hashicorp.com/terraform/0.14.3/terraform_0.14.3_linux_amd64.zip
-      - sudo apt install zip -y
-      - sudo unzip terraform_0.14.3_linux_amd64.zip
-      - sudo mv terraform /usr/local/bin/
-      - terraform --version
-      - apt-get update
-      - apt-cache search source
-      - apt-get install -y curl jq
-      - cd terraform-code
+      - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+      - sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+      - sudo apt update
+      - sudo apt install terraform
+      - "terraform --version"
+      - pwd
+      - ls
+      - cd terraform 
+      - ls
+      - cd dev
+      - ls
       - terraform init
+      - ls
       - terraform plan -out=FILE
-      - terraform apply -auto-approve
-      
+      - ls
+      - terraform apply --auto-approve
+      - terraform apply -target=module.<sns1>
+
+
   build:
     commands:
       - echo "Post apply build"
