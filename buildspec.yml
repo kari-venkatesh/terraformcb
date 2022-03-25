@@ -16,8 +16,6 @@ phases:
       - "terraform --version"
       - pwd
       - ls
-      - cd terraformcb
-      - ls
       - terraform init
       - ls
       - terraform plan -out=FILE
