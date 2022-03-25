@@ -16,9 +16,7 @@ phases:
       - "terraform --version"
       - pwd
       - ls
-      - cd terraform 
-      - ls
-      - cd dev
+      - cd terraformcb
       - ls
       - terraform init
       - ls
