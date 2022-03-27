@@ -16,6 +16,11 @@ phases:
       - "terraform --version"
       - pwd
       - ls
+      - terraform init
+      - ls
+      - terraform plan -out=FILE
+      - ls
+      - terraform apply --auto-approve
 
 
 
