@@ -16,11 +16,7 @@ phases:
       - "terraform --version"
       - pwd
       - ls
-      - terraform init
-      - ls
-      - terraform plan 
-      - ls
-      - terraform apply -target=module.<sns1>
+
 
 
   build:
