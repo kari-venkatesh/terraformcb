@@ -19,9 +19,7 @@ phases:
       - cd sns1
       - terraform init
       - ls
-      - terraform plan -out=FILE
-      - ls
-      - terraform apply --auto-approve
+      - $destroy
 
 
 
