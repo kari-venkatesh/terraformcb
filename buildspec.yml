@@ -27,7 +27,7 @@ phases:
       - ls 
       - terraform validate
       #- terraform destroy --auto-approve
-      - terraform plan -out=FILE
+      - terraform plan 
       - ls
 #      - aws s3 cp s3://devcwstatefile/devcwstatefile/terraform.tfstate ./
      # - ls
