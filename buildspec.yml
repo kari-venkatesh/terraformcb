@@ -5,9 +5,11 @@ version: 0.2
 #    key: "value"
 #    key: "value"
 
+
 phases:
   install:
     commands:
+
       - sudo apt-get update -y
       - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
       - sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
@@ -16,12 +18,25 @@ phases:
       - "terraform --version"
       - pwd
       - ls
-      - cd sns1
+      - $CODEBUILD_BUILD_ARN | awk -F':' '{print $6}' | awk -F'/' '{print $2}'
+  #    - cd terraform 
+  #   - ls
+      #- cd terraformcb
+      #- cd $TERRAFORM_PATH
       - terraform init
+      - ls 
+      - terraform validate
+      #- terraform destroy --auto-approve
+      - terraform plan -out=FILE
       - ls
-      - $destroy
-
-
+#      - aws s3 cp s3://devcwstatefile/devcwstatefile/terraform.tfstate ./
+     # - ls
+      - terraform apply --auto-approve
+    #  - aws s3 cp ./terraform.tfstate s3://devcwstatefile/devcwstatefile/
+     # - aws s3 cp s3://devcwstatefile/devcwstatefile/./terraform/dev/cloudwatchsamplescripct
+    #   - aws s3 cp s3://devcwstatefile/devcwstatefile/terraform.tfstate ./
+      - ls
+      - pwd
 
   build:
     commands:
